@@ -17,6 +17,14 @@ publishing {
           url = providers.gradleProperty("internalUrl")
           credentials(PasswordCredentials)
         }
+        maven {
+          name = "GitHubPackages"
+          url = "https://maven.pkg.github.com/Betwise-gg/sqldelight"
+          credentials {
+            username = System.getenv("GITHUB_ACTOR")
+            password = System.getenv("GITHUB_TOKEN")
+          }
+        }
     }
 }
 
